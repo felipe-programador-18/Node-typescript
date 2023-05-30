@@ -1,16 +1,14 @@
-import express from  "express"
-import todosRouters from "./router/router"
+import express, {Router} from  "express"
+import todosTesting from "./router/router"
 
-import { Todo } from "./models/models";
-
-
-const todos: Todo = []=[];
-
+import bodyParser, { BodyParser } from "body-parser"
 
 const app = express()
-app.use(todosRouters) 
-const port = 3000
+app.use(todosTesting)
+app.use(bodyParser.json()) 
 
+
+const port = 3000
 app.listen(port)
 
 
