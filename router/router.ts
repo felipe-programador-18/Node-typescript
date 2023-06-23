@@ -7,7 +7,8 @@ const todos:Todo[] =[]
 
 router.get("/", (req:any, res:any, next) => {
    res.status(200).json({todos:todos})
-   
+   res.send("I am here now")
+   next("Iam here now")
 })  
 
 router.post("/todos", (req:any, res:any, next) => {
@@ -20,7 +21,6 @@ router.post("/todos", (req:any, res:any, next) => {
 
    res.status(201).json({message:"added with sucess", todos: todos})
 })
-
 
 router.put("/todos/edit",  (req:any,res:any, next) => {
    const get = req.params.todosId
